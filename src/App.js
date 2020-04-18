@@ -12,9 +12,6 @@ export class App extends Component {
         {this.state.dice.map((dice) => {
           return <Dice numberOfSides={dice} />
         })}
-        <section>
-          <header>Past Rolls</header>
-        </section>
       </main>
     )
   }
