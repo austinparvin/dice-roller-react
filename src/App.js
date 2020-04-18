@@ -1,26 +1,20 @@
 import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
+import Dice from './components/Dice'
 
 export class App extends Component {
   state = {
-    roll: '?',
-  }
-
-  rollDice = (e) => {
-    const roll = Math.floor(Math.random() * 7)
-    console.log(roll)
-    this.setState({
-      roll: roll,
-    })
+    dice: [20, 12, 10, 8, 4, 100],
   }
 
   render() {
     return (
       <main>
-        <p className="result">{this.state.roll}</p>
-        <button onClick={this.rollDice} className="roll-button">
-          Roll D6
-        </button>
+        {this.state.dice.map((dice) => {
+          return <Dice numberOfSides={dice} />
+        })}
+        <section>
+          <header>Past Rolls</header>
+        </section>
       </main>
     )
   }
